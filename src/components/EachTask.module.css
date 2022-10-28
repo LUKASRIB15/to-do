@@ -1,0 +1,52 @@
+.eachTask{
+    width: 100%;
+    background-color: var(--gray-500);
+    overflow: hidden;
+    display: grid;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.eachTask + .eachTask{
+    margin-top: 0.75rem;
+}
+
+.content{
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.commentTask{
+    overflow: hidden;
+    font-size: 0.875rem;
+    width: 100%;
+}
+.commentTaskEnd{
+    overflow: hidden;
+    font-size: 0.875rem;
+    text-decoration: line-through;
+    color: var(--gray-300); 
+    width: 100%;
+}
+
+.deleteTask{
+   background-color: transparent;
+   border: none;
+   color: var(--gray-300);
+   display: flex;
+   justify-content: flex-end;
+   padding: 0.3rem;
+   margin-bottom: 0.3rem;
+   border-radius: 4px;
+
+   transition: background-color 0.2s, color 0.2s;
+}
+
+.deleteTask:hover{
+    background-color: var(--gray-400);
+    color: var(--danger);
+    
+}
+

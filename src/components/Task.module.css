@@ -1,0 +1,104 @@
+.task{
+    width: 100%;
+}
+
+.addTask{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.addTask textarea{
+    width: 39.875rem;
+    height: 3.375rem;
+    resize: none;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    border: none;
+    box-shadow: 1px 1px 1px 1px var(--gray-700);
+    color: var(--gray-100);
+    
+}
+
+.addTask textarea:focus{
+    outline: 2px solid var(--purple-dark);
+}
+
+.addTask button{
+    width: 5.625rem;
+    padding: 1rem;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.875rem;
+
+    transition: background-color 0.2s;
+}
+
+.addTask button:hover{
+    background-color: var(--blue);
+}
+
+.content{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskCreate{
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--blue);
+}
+
+.taskCompleted{
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--purple);
+}
+
+.countCreate{
+    background-color: var(--gray-400);
+    color: var(--gray-100);
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+}
+
+.countCompleted{
+    background-color: var(--gray-400);
+    color: var(--gray-100);
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    box-sizing: initial;
+}
+
+.contentTask{
+    margin-top: 1.5rem;
+    
+}
+
+.contentTaskEmpty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15.25rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.contentTaskEmpty div{
+    color: var(--gray-300);
+    margin-top: 1rem;
+}
