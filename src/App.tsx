@@ -1,7 +1,10 @@
-function App() {
+import { Header } from './components/Header'
+import './global.css'
+
+export function App() {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <Header/>
+    </div>
   )
 }
-
-export default App
