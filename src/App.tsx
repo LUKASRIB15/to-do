@@ -1,10 +1,16 @@
 import { Header } from './components/Header'
+
+import styles from "./App.module.css"
 import './global.css'
+import { Search } from './components/Search'
 
 export function App() {
   return (
-    <div>
+    <>
       <Header/>
-    </div>
+      <div className={styles.wrapper}>
+        <Search/>
+      </div>
+    </>
   )
 }
