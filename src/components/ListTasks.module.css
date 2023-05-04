@@ -1,0 +1,53 @@
+.listTasks{
+  margin-top: 4rem;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header div{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header strong{
+  font-size: 0.875rem;
+}
+
+.header span{
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.header div:nth-child(1) strong{
+  color: var(--blue);
+}
+
+.header div:nth-child(2) strong{
+  color: var(--purple);
+}
+
+/* Content Main List */
+.listContent{
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center; 
+}
+
+.listContent div{
+  line-height: 1.6;
+}
