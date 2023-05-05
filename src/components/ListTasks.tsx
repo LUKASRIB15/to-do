@@ -1,9 +1,14 @@
 import styles from "./ListTasks.module.css"
 import Clipboard from "../assets/clipboard.svg";
-import {useState} from 'react'
+import { Task } from "./Task";
 
-export function ListTasks(){
+interface ListTasksProps{
+  listTasks: string[];
+}
+
+export function ListTasks({listTasks}:ListTasksProps){
   return(
+    <>
     <main className={styles.listTasks}>
       <header className={styles.header}>
         <div>
@@ -15,13 +20,30 @@ export function ListTasks(){
           <span>0</span>
         </div>
       </header>
-      <main className={styles.listContent}>
-        <img src={Clipboard} alt="ícone de Clipboard"/>
-        <div>
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-          <p>Crie tarefas e organize seus itens a fazer</p>
-        </div>
+      <main className={
+        listTasks.length==0?
+        styles.listContentWithOutTask
+        :
+        styles.listContentWithTask
+      }>
+        {
+          listTasks.length==0?
+          <>
+              <img src={Clipboard} alt="ícone de Clipboard"/>
+              <div>
+                <strong>Você ainda não tem tarefas cadastradas</strong>
+                <p>Crie tarefas e organize seus itens a fazer</p>
+              </div>
+            </>
+          :
+          <>
+            {listTasks.map((task)=>{
+              return <Task content={task}/>
+            })}
+          </>
+        }
       </main>
     </main>
+    </>
   )
 }
