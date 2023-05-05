@@ -1,30 +1,22 @@
 import { PlusCircle } from "phosphor-react"
 import styles from "./Search.module.css"
-import {useState, ChangeEvent} from "react"
+import {ChangeEvent} from "react"
 
-export function Search(){
-  const [newTask, setNewTask] = useState('')
-  const [tasks, setTasks] = useState<string[]>([])
+interface SearchProps{
+  onCreateNewTask: (event:ChangeEvent<HTMLFormElement>)=>void;
+  onNewTask: (event:ChangeEvent<HTMLInputElement>)=>void;
+  valueInput: string;
+}
 
-  function handleCreateNewTask(event: ChangeEvent<HTMLFormElement>){
-    event.preventDefault()
-    setTasks((state) =>{
-      return [...state, newTask]
-    })
-  }
-  // Adicionando o valor em tempo real
-  function handleNewTask(event: ChangeEvent<HTMLInputElement>){
-    setNewTask(event.target.value)
-  }
-
+export function Search({onCreateNewTask, onNewTask, valueInput}:SearchProps){
   return(
-    <form onSubmit={handleCreateNewTask} className={styles.formContent}>
+    <form onSubmit={onCreateNewTask} className={styles.formContent}>
       <input 
         className={styles.inputField} 
         type="text" 
         placeholder="Adicione uma nova tarefa"
-        onChange={handleNewTask}
-        value={newTask}
+        onChange={onNewTask}
+        value={valueInput}
       />
       <button className={styles.createButton} type="submit">
         Criar
