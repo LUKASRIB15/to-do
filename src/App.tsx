@@ -4,6 +4,7 @@ import styles from "./App.module.css"
 import './global.css'
 import { Search } from './components/Search'
 import { ListTasks } from './components/ListTasks'
+import { Task } from './components/Task'
 
 export function App() {
   return (
