@@ -5,9 +5,13 @@ import styles from "./Task.module.css";
 
 interface TaskProps{
   content: string;
+  onDeleteTask: (taskDeleted:string)=>void;
 }
 
-export function Task({content}: TaskProps){
+export function Task({content, onDeleteTask}: TaskProps){
+  function deleteTask(text:string){
+    onDeleteTask(text)
+  }
   return(
     <div className={styles.taskComponent}>
       <Checkbox.Root className={styles.checkboxInput}>
@@ -16,7 +20,7 @@ export function Task({content}: TaskProps){
         </Checkbox.Indicator>
       </Checkbox.Root>
       <p>{content}</p>
-      <button className={styles.removeButton}>
+      <button className={styles.removeButton} onClick={()=>deleteTask(content)}>
         <Trash size={18}/>
       </button>
     </div>

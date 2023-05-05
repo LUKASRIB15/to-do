@@ -2,11 +2,17 @@ import styles from "./ListTasks.module.css"
 import Clipboard from "../assets/clipboard.svg";
 import { Task } from "./Task";
 
+export interface objectListTasks{
+  id: string;
+  content: string;
+};
+
 interface ListTasksProps{
-  listTasks: string[];
+  listTasks: objectListTasks[];
+  removingTask: (taskDeleted:string)=>void;
 }
 
-export function ListTasks({listTasks}:ListTasksProps){
+export function ListTasks({listTasks, removingTask}:ListTasksProps){
   return(
     <>
     <main className={styles.listTasks}>
@@ -38,7 +44,11 @@ export function ListTasks({listTasks}:ListTasksProps){
           :
           <>
             {listTasks.map((task)=>{
-              return <Task content={task}/>
+              return <Task 
+                        key={task.id}
+                        content={task.content} 
+                        onDeleteTask={removingTask}
+                      />
             })}
           </>
         }
