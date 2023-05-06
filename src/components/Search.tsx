@@ -1,6 +1,6 @@
 import { PlusCircle } from "phosphor-react"
 import styles from "./Search.module.css"
-import {ChangeEvent} from "react"
+import {ChangeEvent, InvalidEvent} from "react"
 
 interface SearchProps{
   onCreateNewTask: (event:ChangeEvent<HTMLFormElement>)=>void;
@@ -9,6 +9,12 @@ interface SearchProps{
 }
 
 export function Search({onCreateNewTask, onNewTask, valueInput}:SearchProps){
+  const buttonCreateIsDisabled = valueInput.length == 0;
+
+  function handleTaskInvalid(event: InvalidEvent<HTMLInputElement>){
+    event.target.setCustomValidity("Campo obrigatório!")
+  }
+
   return(
     <form onSubmit={onCreateNewTask} className={styles.formContent}>
       <input 
@@ -17,8 +23,10 @@ export function Search({onCreateNewTask, onNewTask, valueInput}:SearchProps){
         placeholder="Adicione uma nova tarefa"
         onChange={onNewTask}
         value={valueInput}
+        onInvalid={handleTaskInvalid}
+        required
       />
-      <button className={styles.createButton} type="submit">
+      <button className={styles.createButton} disabled={buttonCreateIsDisabled} type="submit">
         Criar
         <PlusCircle size={20}/>
       </button>

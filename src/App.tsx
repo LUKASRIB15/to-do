@@ -17,9 +17,11 @@ export function App() {
     setTasks((state) =>{
       return [...state, {id: crypto.randomUUID(), content: newTask, checked: false}]
     })
+    setNewTask('');
   }
   // Adicionando o valor em tempo real
   function handleNewTask(event: ChangeEvent<HTMLInputElement>){
+    event.target.setCustomValidity("")
     setNewTask(event.target.value)
   }
 
