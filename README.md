@@ -17,6 +17,11 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 <br/>
 
+# ⚙️ Projeto
+Você pode acessar o projeto e testá-lo clicando nesse link: [ToDo](https://lukasrib15.gihub.io/to-do)
+
+<br/
+>
 # 💻 Principais issues
 
 - Criar componentes Header, Search, ListTask, Task
