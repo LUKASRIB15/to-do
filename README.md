@@ -1,6 +1,6 @@
 <h1 align="center">ToDo</h1>
 
-O programa Todo foi criado com o intuito de compreender mais sobre os fundamentos do ReactJs como componentes, hooks como o useState e propriedades. O programa criado para que usuários possam criar suas tarefas e marcar como concluídas e apagá-las se quiser.
+O programa Todo foi criado com o intuito de compreender mais sobre os fundamentos do ReactJs como componentes, hooks como o useState e propriedades. O programa foi criado para que usuários possam criar suas tarefas e marcar como concluídas e apagá-las se quiser.
 
 <br/>
 
