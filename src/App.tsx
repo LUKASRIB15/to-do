@@ -10,11 +10,12 @@ import { objectListTasks } from './components/ListTasks'
 export function App() {
   const [newTask, setNewTask] = useState('')
   const [tasks, setTasks] = useState<objectListTasks[]>([])
+  const [checkedTasks, setCheckedTasks] = useState<objectListTasks[]>([])
 
   function handleCreateNewTask(event: ChangeEvent<HTMLFormElement>){
     event.preventDefault()
     setTasks((state) =>{
-      return [...state, {id: crypto.randomUUID(), content: newTask}]
+      return [...state, {id: crypto.randomUUID(), content: newTask, checked: false}]
     })
   }
   // Adicionando o valor em tempo real
@@ -24,9 +25,20 @@ export function App() {
 
   function handleDeleteTask(taskDeleted:string){
     const newListTasks = tasks.filter((task)=>{
-      return task.content!=taskDeleted;
+      return task.id!=taskDeleted;
     }) 
-    setTasks(newListTasks); 
+    setTasks((state)=>{
+      state = newListTasks;
+      handleCheckedTask(state)
+      return state
+    });
+  }
+
+  function handleCheckedTask(listTasks:objectListTasks[]){
+    const newListCheckedTasks = listTasks.filter((task)=>{
+      return task.checked == true;
+    })
+    setCheckedTasks(newListCheckedTasks);
   }
   return (
     <>
@@ -40,6 +52,8 @@ export function App() {
         <ListTasks 
           listTasks={tasks}
           removingTask={handleDeleteTask}
+          onCheckedTasks={handleCheckedTask}
+          totalCheckedTasks={checkedTasks}
         />
       </div>
     </>
