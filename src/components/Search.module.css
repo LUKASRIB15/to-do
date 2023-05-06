@@ -1,6 +1,7 @@
 .formContent{
   display: grid;
   grid-template-columns: 1fr 100px;
+  place-content: center;
   gap: 0.5rem;
   margin-top: calc((12.5rem - 173px) * (-1));
 }
@@ -41,7 +42,7 @@
   cursor: not-allowed;
 }
 
-@media(max-width:360px){
+@media(max-width: 360px){
   .formContent{
     grid-template-columns: 215px 100px;
   }
