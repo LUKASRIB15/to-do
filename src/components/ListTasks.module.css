@@ -56,3 +56,9 @@
 .listContentWithTask{
   margin-top: 1.5rem;
 }
+
+@media(max-width: 360px){
+  .listContentWithOutTask{
+    text-align: center;
+  }
+}

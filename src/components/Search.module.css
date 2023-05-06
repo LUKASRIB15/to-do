@@ -40,3 +40,9 @@
   opacity: 0.7;
   cursor: not-allowed;
 }
+
+@media(max-width:360px){
+  .formContent{
+    grid-template-columns: 215px 100px;
+  }
+}
