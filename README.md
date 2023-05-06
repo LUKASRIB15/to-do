@@ -20,7 +20,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 # ⚙️ Projeto
 Você pode acessar o projeto e testá-lo clicando nesse link: [ToDo](https://lukasrib15.github.io/to-do/)
 
-<br/>
+<br>
 
 # 💻 Principais issues
 
